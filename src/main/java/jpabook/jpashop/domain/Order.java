@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import jpabook.jpashop.domain.item.Delivery;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +15,7 @@ import java.util.List;
 @Getter @Setter
 public class Order {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name = "order_id")
     private Long id;
 
@@ -23,17 +23,16 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "order_id")
+    @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
+
     private Date date;
-    private LocalDateTime orderDate;
+    private LocalDateTime orderDate; // 주문시간
 
-    private OrderStatus status; // 주문 상태 [ORDER , CANCEL]
-
-
+    private OrderStatus status; // 주문상태 [ORDER, CANCEL]
 }
