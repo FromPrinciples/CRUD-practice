@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -62,7 +61,7 @@ public class MemberServiceTest {
 
 
         //then
-        fail("예외가 발생해야 한다."); // 제어 흐름이 도달하면 안 되는 구간
+//        fail("예외가 발생해야 한다."); // 제어 흐름이 도달하면 안 되는 구간
     }
 
 }
