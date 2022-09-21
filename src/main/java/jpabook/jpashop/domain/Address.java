@@ -16,6 +16,12 @@ public class Address {
                         // JPA 구현 라이브러리가 객체 생성 시 리플렉션 같은 기술을 사용하도록 지원해야 하기 때문
 
     }
+
+    public Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
 }
 
 
