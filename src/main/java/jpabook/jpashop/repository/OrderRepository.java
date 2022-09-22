@@ -30,8 +30,8 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
-    // 검색 조건에 동적으로 쿼리를 생성해 주문 엔티티를 조
-    public List<Order> findAll(OrderSearch orderSearch){
+    // 검색 조건에 동적으로 쿼리를 생성해 주문 엔티티를 조회
+    public List<Order> findAllByString(OrderSearch orderSearch){
         //language=JPAQL
         String jpql = "select o From Order o join o.member m";
         boolean isFirstCondition = true;
